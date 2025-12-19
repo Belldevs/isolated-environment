@@ -23,83 +23,79 @@
     </div>
 
     <div class="courses-container">
-        <div class="academy">
-            <div class="academy-image">
-                <img  src="@/assets/images/eduball-img-2.jpg" alt="Image of three boys on a soccer field,three holding a football."/>
-            </div>
-            <div class="academy-text">
-                <h3>Football Academy</h3>
-                <p>Our football camps focus on providing players with 
-                    an immersive and comprehensive training experience. 
-                    These camps are designed to refine technical skills, 
-                    improve tactical knowledge, and enhance overall 
-                    performance on the field.</p>
-            </div>
+      <div class="course-card">
+        <div class="card-image">
+          <img src="@/assets/images/eduball-img-2.jpg" alt="Football Academy"/>
         </div>
-
-        <div class="webinar">
-            <div class="webinar-image">
-                <img  src="@/assets/images/online-class.jpg" alt="Image of three boys on a soccer field,three holding a football."/>
-            </div>
-            <div class="webinar-text">
-                <h3>Webinars</h3>
-                <p>Join our webinars to learn from industry experts and 
-                    thought leaders on a variety of topics.</p>
-            </div>
+        <div class="card-text">
+          <h3>Football Academy</h3>
+          <p>Our football camps focus on providing players with 
+            an <b>immersive</b> and <b>comprehensive</b> training experience. 
+            These camps are designed to refine technical skills, 
+            <b>improve tactical knowledge,</b> and enhance overall performance.</p>
         </div>
+      </div>
 
+      <div class="course-card">
+        <div class="card-image">
+          <img src="@/assets/images/online-class.jpg" alt="Webinars"/>
+        </div>
+        <div class="card-text">
+          <h3>Webinars</h3>
+          <p>Join our webinars to learn from industry experts and thought leaders on a variety of football-centric topics and management strategies.</p>
+        </div>
+      </div>
 
+      <div class="course-card diploma-card">
+        <div class="card-image">
+          <img src="@/assets/images/diploma.jpeg" alt="Diploma"/>
+        </div>
+        <div class="card-text">
+          <h3>EDUBALL C DIPLOMA <span class="soon">(COMING SOON)</span></h3>
+          <p>The EDUBALL C Diploma equips aspiring coaches with foundational skills, practical training methods, and tactical knowledge for long-term success.</p>
+        </div>
+      </div>
     </div>
-
   </div>
 </template>
 
-<script>
-export default {
-  name: 'ProgramHero',
-}
-</script>
-
 <style scoped>
-/* Reset and Container */
+/* --- BASE & UTILITIES --- */
 .programs-page {
   background: #111;
   min-height: 100vh;
   width: 100%;
   overflow-x: hidden;
+  color: white;
 }
 
-/* Heading Styling */
+/* --- HEADING --- */
 .heading-container {
-  padding: 80px 20px 40px 20px;
-  color: white;
+  padding: clamp(40px, 8vw, 80px) 20px;
   text-align: center;
 }
 
 .heading-container h1 {
   font-family: 'Cabin', sans-serif;
-  font-size: 32px;
+  font-size: clamp(24px, 5vw, 32px);
+  text-transform: uppercase;
   letter-spacing: 2px;
 }
 
-/* Hero Section Layout */
+/* --- HERO SECTION --- */
 .program-hero {
   position: relative;
   width: 100%;
-  height: 60vh; /* Set a consistent height */
-  min-height: 400px;
+  height: 60vh;
+  min-height: 450px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Background Image & Overlay */
 .program-image-wrapper {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   z-index: 1;
 }
 
@@ -107,111 +103,191 @@ export default {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 30%; /* Focus on the field/people */
+  object-position: center 30%;
 }
 
 .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6); /* Darker for better text readability */
+  background: rgba(0, 0, 0, 0.65);
 }
 
-/* Text Content Styling */
 .hero-content {
   position: relative;
-  z-index: 2; /* Sits above the image/overlay */
+  z-index: 2;
   width: 90%;
-  max-width: 1000px;
+  max-width: 800px;
   text-align: center;
-  padding: 20px;
 }
 
 .hero-text h1 {
   font-family: 'Karla', sans-serif;
-  font-size: clamp(1.8rem, 6vw, 4rem);
-  color: white;
+  font-size: clamp(1.8rem, 7vw, 3.5rem);
   margin-bottom: 20px;
+  line-height: 1.1;
 }
 
 .colored {
-   background: linear-gradient(90deg, #12DDF3, #0AF128);
+  background: linear-gradient(90deg, #12DDF3, #0AF128);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text; /* Your brand red */
+  background-clip: text;
 }
 
 .hero-text p {
   font-family: 'Cabin', sans-serif;
-  font-size: clamp(1rem, 2vw, 1.4rem);
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
   color: #e0e0e0;
   line-height: 1.6;
-  max-width: 700px;
-  margin: 0 auto 20px auto;
+  margin-bottom: 30px;
 }
-.cpd-link{
-    text-decoration: none;
-  background:white;
-    color:black;
-    padding:10px 25px;
-    border-radius:20px;
-    font-family: sans-serif;
+
+.cpd-link {
+  display: inline-block;
+  text-decoration: none;
+  background: white;
+  color: black;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-family: sans-serif;
+  transition: 0.3s ease;
 }
-.cpd-link:hover{
-  color:white;
-  transition:.2s ease-in-out;
-    background:black;
+
+.cpd-link:hover {
+  background: #0AF128;
+  transform: translateY(-3px);
 }
-.courses-container{
-    padding:80px;
+
+/* --- COURSES GRID --- */
+.courses-container {
+  padding: 40px 5%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Automatically flows */
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* --- COURSE CARDS --- */
+.course-card {
+  display: flex;
+  flex-direction: column; /* Mobile First: Stacked */
+  background: #1a1a1a;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  border: 1px solid #333;
+}
+
+.course-card:hover {
+  transform: translateY(-10px);
+  border-color: #12DDF3;
+}
+
+.card-image {
+  width: 100%;
+  height: 250px;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.card-text {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-text h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  font-family: 'Karla', sans-serif;
+  color: white;
+}
+
+.soon {
+  font-size: 14px;
+  color: #12DDF3;
+  display: block;
+}
+
+.card-text p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #b0b0b0;
+  font-family: sans-serif;
+}
+
+/* --- BREAKPOINTS --- */
+/* For big desktops */
+@media (min-width: 1132px) {
+  .courses-container {
+    padding: 80px 5%;
     display:grid;
-    grid-template-columns: repeat(2,1fr);
-    gap:20px;
-}
-.academy,.webinar{
-    height:400px;
-    width:auto;
-    display:flex;
-    background:red;
-}
-.academy-image img, .webinar-image img{
-    object-fit: cover;
-    height:100%;
-    width:auto;
-}
-.academy-text{
-  
-}
-/* --- RESPONSIVE FIXES --- */
+    grid-template-rows: 2,1fr;
+  }
 
-/* Tablets (iPad/Portrait) */
+  .course-card {
+    flex-direction: row;
+ /* Horizontal on large screens */
+    height: 800px;
+  }
+  
+  /* Make the Diploma card span the full width if you want it to stand out */
+  .diploma-card {
+    grid-column: 1 / -1; 
+  }
+
+  .card-image {
+    width: 40%; /* Image takes 40% width */
+    height: 100%;
+  }
+
+  .card-text {
+    width: 40%;
+    
+  }
+}
+/* For Desktop/Laptops: Turn cards into Row layout */
+@media (min-width: 1024px) {
+  .courses-container {
+    padding: 80px 5%;
+  }
+
+  .course-card {
+    flex-direction: row; /* Horizontal on large screens */
+    height: 350px;
+  }
+  
+  /* Make the Diploma card span the full width if you want it to stand out */
+  .diploma-card {
+    grid-column: 1 / -1; 
+  }
+
+  .card-image {
+    width: 40%; /* Image takes 40% width */
+    height: 100%;
+  }
+
+  .card-text {
+    width: 60%;
+  }
+}
+
 @media (max-width: 768px) {
-  .heading-container {
-    padding: 60px 20px 20px 20px;
+  .hero-content {
+    width: 95%;
   }
   
-  .program-hero {
-    height: 50vh;
-  }
-}
-
-/* Mobile (Phones) */
-@media (max-width: 480px) {
-  .heading-container {
-    padding: 40px 15px 10px 15px;
-  }
-
   .program-hero {
     height: auto;
-    padding: 60px 0; /* Let content dictate height on small screens */
-  }
-
-  .hero-text h1 {
-    font-size: 2rem;
-  }
-
-  .hero-text p {
-    font-size: 1rem;
-    padding: 0 10px;
+    padding: 100px 0;
   }
 }
 </style>
