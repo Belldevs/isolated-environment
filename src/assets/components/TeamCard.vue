@@ -6,7 +6,7 @@
       <h2>MEET THE TEAM</h2>
       <h3>
         Our team consists of UEFA-licensed, experienced football
-        and life coaches who bring not only their passion for
+         who bring not only their passion for
         the game, but also their active commitment to EDUBALL’s
         mission of driving sporting excellence across the continent.
       </h3>
@@ -168,3 +168,4 @@ export default {
   }
 }
 </style>
+
