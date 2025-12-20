@@ -184,6 +184,7 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 70px;
+  font-family:sans-serif;
 }
 
 /* VIDEO GRID */
@@ -327,5 +328,6 @@ export default {
   }
 }
 </style>
+
 
 
