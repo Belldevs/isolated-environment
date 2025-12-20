@@ -209,6 +209,7 @@ export default {
 }
 .video-title {
   margin-top: 10px;
+  font-family:'Cabin',sans-serif;
 }
 
 /* QUOTE */
@@ -216,6 +217,7 @@ export default {
   display: flex;
   gap: 30px;
   max-width: 700px;
+  font-family:sans-serif;
   margin: auto;
 }
 .quote-avatar {
@@ -282,6 +284,7 @@ export default {
   margin-top: 16px;
   padding: 14px 32px;
   border-radius: 30px;
+  font-family:sans-serif;
   font-weight: 600;
   text-decoration: none;
 }
@@ -324,4 +327,5 @@ export default {
   }
 }
 </style>
+
 
