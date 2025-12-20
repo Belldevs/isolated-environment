@@ -156,7 +156,7 @@ export default {
         },
         {
           title: 'EDUBALLERS',
-          age: 'Ages 18–26',
+          age: 'Ages 17-23',
           image: adults
         }
       ]
@@ -324,3 +324,4 @@ export default {
   }
 }
 </style>
+
