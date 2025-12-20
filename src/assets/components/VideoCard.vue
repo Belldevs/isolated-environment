@@ -190,6 +190,7 @@ export default {
 /* VIDEO GRID */
 .video-grid {
   display: grid;
+  margin-bottom:20px;
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
 }
@@ -293,7 +294,6 @@ export default {
 }
 .primary-btn {
   background: #0af128;
-  margin:10px 0;
   color: #000;
 }
 .outline-btn {
@@ -331,6 +331,7 @@ export default {
   }
 }
 </style>
+
 
 
 
