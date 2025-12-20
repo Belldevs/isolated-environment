@@ -5,11 +5,10 @@
     <div class="team-left">
       <h2>MEET THE TEAM</h2>
       <h3>
-       Our team consists of UEFA-licensed, experienced football
+        Our team consists of UEFA-licensed, experienced football
         and life coaches who bring not only their passion for
-         the game, but also their active commitment to EDUBALL’s
-          mission 
-       of driving sporting excellence across the continent.
+        the game, but also their active commitment to EDUBALL’s
+        mission of driving sporting excellence across the continent.
       </h3>
     </div>
 
@@ -50,72 +49,119 @@ export default {
 </script>
 
 <style scoped>
+/* ===== DESKTOP ===== */
 .container {
   padding: 100px;
-  justify-content: space-between;
   display: flex;
-  background:#000000;
-  color:white;
+  justify-content: space-between;
   gap: 80px;
+  background: #000;
+  color: white;
 }
 
 /* LEFT SIDE */
 .team-left {
-  width: 35%;
-  display:flex;
-  justify-content: space-between;
+  flex: 1;
+  max-width: 40%;
+  display: flex;
   flex-direction: column;
+  gap: 20px;
 }
 
 .team-left h2 {
   font-size: 40px;
-   font-family: "Lexend Deca", sans-serif;
-  margin-bottom: 20px;
-   background: linear-gradient(90deg, #12DDF3, #0AF128);
+  font-family: "Lexend Deca", sans-serif;
+  background: linear-gradient(90deg, #12DDF3, #0AF128);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 .team-left h3 {
   font-size: 24px;
-  color:#cececc;
-  font-family:'Arial',sans-serif;
-  width:95%;
+  color: #cececc;
+  font-family: Arial, sans-serif;
   font-weight: 300;
 }
 
 /* RIGHT GRID */
 .team-right {
-  width: 45%;
+  flex: 1;
+  max-width: 50%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, auto);
-  gap: 5px;
+  gap: 20px;
 }
 
 /* PERSON CARD */
 .person {
   display: flex;
-  padding:2.5px;
   flex-direction: column;
-  align-items: center; /* centers name horizontally */
+  align-items: center;
   text-align: center;
 }
 
 .person img {
   width: 140px;
-  height: 120px;
+  height: 140px;
   object-fit: cover;
-  object-position: center 25%;
+  border-radius: 6px;
 }
-
 
 .person p {
   margin-top: 12px;
   font-size: 18px;
- font-family:'Arial',serif;
+  font-family: Arial, serif;
   font-weight: 500;
 }
 
+/* ===== TABLET ===== */
+@media (max-width: 1024px) {
+  .container {
+    padding: 60px;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .team-left,
+  .team-right {
+    max-width: 100%;
+  }
+
+  .team-left h2 {
+    font-size: 34px;
+  }
+
+  .team-left h3 {
+    font-size: 22px;
+  }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .container {
+    padding: 40px 20px;
+  }
+
+  .team-left h2 {
+    font-size: 28px;
+  }
+
+  .team-left h3 {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  .team-right {
+    grid-template-columns: 1fr;
+  }
+
+  .person img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .person p {
+    font-size: 16px;
+  }
+}
 </style>
