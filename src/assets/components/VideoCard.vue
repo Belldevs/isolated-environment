@@ -134,7 +134,7 @@ export default {
         {
           title: 'Coaching Interventions by Seyi Olofinjana',
           thumbnail: logo,
-          youtube: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
+          youtube: 'https://youtu.be/Bh2CQ5xQ8tM?si=dGT2El28yIfTnYwS'
         },
         {
           title: 'Finishing – by Joseph Olumide',
@@ -331,6 +331,7 @@ export default {
   }
 }
 </style>
+
 
 
 
