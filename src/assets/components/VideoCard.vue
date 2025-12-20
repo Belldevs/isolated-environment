@@ -79,7 +79,7 @@
       <div class="overlay">
         <h3>BOOK A PRIVATE TRAINING SESSION TODAY!</h3>
         <p>Level up your football game with our fleet of UEFA Licensed coaches</p>
-        <a href="/book-session" class="primary-btn">
+        <a href=" https://docs.google.com/forms/d/e/1FAIpQLSeFkBl7v83Tx-C-1yjbK8Y82z2Rk3U8Z8MJtKdF1CbAwWPCug/viewform " class="primary-btn">
           Book a Session Now
         </a>
       </div>
@@ -328,6 +328,7 @@ export default {
   }
 }
 </style>
+
 
 
 
