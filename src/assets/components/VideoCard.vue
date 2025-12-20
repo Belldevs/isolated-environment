@@ -223,6 +223,8 @@ export default {
 }
 .quote-avatar {
   width: 80px;
+  object-fit:cover;
+  object-position:center 20%;
   height: 80px;
   border-radius: 50%;
 }
@@ -291,6 +293,7 @@ export default {
 }
 .primary-btn {
   background: #0af128;
+  margin:10px 0;
   color: #000;
 }
 .outline-btn {
@@ -328,6 +331,7 @@ export default {
   }
 }
 </style>
+
 
 
 
