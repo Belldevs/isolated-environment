@@ -49,27 +49,25 @@ export default {
 </script>
 
 <style scoped>
-/* ===== DESKTOP ===== */
+/* ===== BASE (MOBILE FIRST) ===== */
 .container {
-  padding: 100px;
+  padding: 40px 20px;
   display: flex;
-  justify-content: space-between;
-  gap: 80px;
+  flex-direction: column;
+  gap: 50px;
   background: #000;
   color: white;
 }
 
-/* LEFT SIDE */
+/* LEFT TEXT */
 .team-left {
-  flex: 1;
-  max-width: 40%;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
 }
 
 .team-left h2 {
-  font-size: 40px;
+  font-size: 28px;
   font-family: "Lexend Deca", sans-serif;
   background: linear-gradient(90deg, #12DDF3, #0AF128);
   -webkit-background-clip: text;
@@ -77,19 +75,18 @@ export default {
 }
 
 .team-left h3 {
-  font-size: 24px;
+  font-size: 18px;
+  line-height: 1.6;
   color: #cececc;
   font-family: Arial, sans-serif;
   font-weight: 300;
 }
 
-/* RIGHT GRID */
+/* RIGHT GRID — 2x2 ON MOBILE */
 .team-right {
-  flex: 1;
-  max-width: 50%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  gap: 24px;
 }
 
 /* PERSON CARD */
@@ -100,31 +97,27 @@ export default {
   text-align: center;
 }
 
+/* BIGGER IMAGES */
 .person img {
-  width: 140px;
-  height: 140px;
+  width: 100%;
+  max-width: 180px;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
-  border-radius: 6px;
+  border-radius: 10px;
 }
 
+/* NAME */
 .person p {
-  margin-top: 12px;
-  font-size: 18px;
+  margin-top: 10px;
+  font-size: 16px;
   font-family: Arial, serif;
   font-weight: 500;
 }
 
 /* ===== TABLET ===== */
-@media (max-width: 1024px) {
+@media (min-width: 768px) {
   .container {
     padding: 60px;
-    flex-direction: column;
-    gap: 50px;
-  }
-
-  .team-left,
-  .team-right {
-    max-width: 100%;
   }
 
   .team-left h2 {
@@ -132,36 +125,46 @@ export default {
   }
 
   .team-left h3 {
-    font-size: 22px;
-  }
-}
-
-/* ===== MOBILE ===== */
-@media (max-width: 768px) {
-  .container {
-    padding: 40px 20px;
-  }
-
-  .team-left h2 {
-    font-size: 28px;
-  }
-
-  .team-left h3 {
-    font-size: 18px;
-    line-height: 1.6;
+    font-size: 20px;
   }
 
   .team-right {
-    grid-template-columns: 1fr;
+    gap: 32px;
   }
 
   .person img {
-    width: 120px;
-    height: 120px;
+    max-width: 200px;
+  }
+}
+
+/* ===== DESKTOP ===== */
+@media (min-width: 1024px) {
+  .container {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 80px;
+    padding: 100px;
   }
 
-  .person p {
-    font-size: 16px;
+  .team-left {
+    max-width: 40%;
+  }
+
+  .team-right {
+    max-width: 50%;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .team-left h2 {
+    font-size: 40px;
+  }
+
+  .team-left h3 {
+    font-size: 24px;
+  }
+
+  .person img {
+    max-width: 220px;
   }
 }
 </style>
