@@ -8,17 +8,41 @@
     <div class="class-two">
       <ul>
         <li v-for="link in footerLinks" :key="link.name">
-          <a :href="link.endpoint">{{ link.name }}</a>
+          <!-- Internal SPA routes -->
+          <router-link
+            v-if="!link.endpoint.startsWith('#')"
+            :to="link.endpoint"
+          >
+            {{ link.name }}
+          </router-link>
+
+          <!-- Anchor links (e.g. Back to Top) -->
+          <a
+            v-else
+            :href="link.endpoint"
+          >
+            {{ link.name }}
+          </a>
         </li>
       </ul>
     </div>
 
     <div class="social-row">
-      <a href="https://www.tiktok.com/@eduballacademy" class="icon"><ion-icon class="icon-s" name="logo-tiktok"></ion-icon></a>
-      <a href="https://www.instagram.com/eduball_academy/" class="icon"><ion-icon class="icon-s" name="logo-instagram"></ion-icon></a>
-      <a href="https://x.com/EduballAcademy" class="icon"><ion-icon class="icon-s" name="logo-twitter"></ion-icon></a>
-      <a href="http://www.youtube.com/@EduballAcademy" class="icon"><ion-icon class="icon-s" name="logo-youtube"></ion-icon></a>
-      <a href="https://ng.linkedin.com/company/eduball-academy" class="icon"><ion-icon class="icon-s" name="logo-linkedin"></ion-icon></a>
+      <a href="https://www.tiktok.com/@eduballacademy" class="icon">
+        <ion-icon class="icon-s" name="logo-tiktok"></ion-icon>
+      </a>
+      <a href="https://www.instagram.com/eduball_academy/" class="icon">
+        <ion-icon class="icon-s" name="logo-instagram"></ion-icon>
+      </a>
+      <a href="https://x.com/EduballAcademy" class="icon">
+        <ion-icon class="icon-s" name="logo-twitter"></ion-icon>
+      </a>
+      <a href="http://www.youtube.com/@EduballAcademy" class="icon">
+        <ion-icon class="icon-s" name="logo-youtube"></ion-icon>
+      </a>
+      <a href="https://ng.linkedin.com/company/eduball-academy" class="icon">
+        <ion-icon class="icon-s" name="logo-linkedin"></ion-icon>
+      </a>
     </div>
 
   </footer>
@@ -27,15 +51,15 @@
 <script>
 export default {
   name: 'Footer',
-  data(){
-    return{
+  data () {
+    return {
       footerLinks: [
-        { name:'Home', endpoint:'/' },
-        { name:'Programs', endpoint:'/programs' },
-        { name:'Gallery', endpoint:'/gallery' },
-        { name:'Sponsors', endpoint:'/sponsors' },
-        { name:'Contact Us', endpoint:'/contact' },
-        { name:'Back to Top', endpoint:'#top' }
+        { name: 'Home', endpoint: '/' },
+        { name: 'Programs', endpoint: '/programs' },
+        { name: 'Gallery', endpoint: '/gallery' },
+        { name: 'Sponsors', endpoint: '/sponsors' },
+        { name: 'Contact Us', endpoint: '/contact' },
+        { name: 'Back to Top', endpoint: '#top' }
       ]
     }
   }
@@ -59,33 +83,34 @@ export default {
   overflow:hidden;
   width: 100%;
   padding: 30px 20px;
-  gap: 20px; /* space between sections */
+  gap: 20px;
 }
 
 /* Title */
 .class-one h1 {
   margin: 0;
   font-family: "Karla", sans-serif;
-
 }
 
 /* Grid for permalinks */
 .class-two ul {
   list-style: none;
-    font-family: "Cabin", sans-serif;
+  font-family: "Cabin", sans-serif;
   padding: 0;
-  margin: 0  0  0 35px   ;
+  margin: 0 0 0 35px;
   display: grid;
   grid-template-columns: repeat(2, auto);
   gap: 10px 140px;
 }
 
-.class-two li a {
+.class-two li a,
+.class-two li router-link {
   color: azure;
   text-decoration: none;
 }
 
-.class-two li a:hover {
+.class-two li a:hover,
+.class-two li router-link:hover {
   text-decoration: underline;
 }
 
@@ -118,23 +143,20 @@ export default {
 .icon-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;   /* fills the circle */
+  object-fit: cover;
 }
 
 /* Responsive behavior */
 @media (max-width: 450px) {
   .container{
-   padding:30px 0;
+    padding:30px 0;
   }
   .class-two{
     width:100%;
   }
-
   .class-two ul{
-    display:grid;
-  margin:0;
-  text-align:center;
-  
+    margin:0;
+    text-align:center;
     grid-template-columns: 1fr;
     width:100%;
   }
